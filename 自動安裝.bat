@@ -206,6 +206,12 @@ if exist %downloadPath% (
     echo 下載完成。
     echo 正在安裝程式...
 
+
+
+start https://goldenrod-chopper-7f3.notion.site/11ec4577d2e3809bb0c2f6703cdce6c4
+
+
+
     :: 靜默安裝（如果安裝程式支持靜默模式）
     start /wait %downloadPath% /silent
 
@@ -219,26 +225,3 @@ if exist %downloadPath% (
     echo 下載失敗，請檢查下載URL。
 )
 
-echo 此程式需要手動安裝，安裝完畢後再按下任意鍵。
-echo 此程式需要手動安裝，安裝完畢後再按下任意鍵。
-echo 此程式需要手動安裝，安裝完畢後再按下任意鍵。
-echo 此程式需要手動安裝，安裝完畢後再按下任意鍵。
-echo 此程式需要手動安裝，安裝完畢後再按下任意鍵。
-echo 此程式需要手動安裝，安裝完畢後再按下任意鍵。
-echo 此程式需要手動安裝，安裝完畢後再按下任意鍵。
-echo 此程式需要手動安裝，安裝完畢後再按下任意鍵。
-echo 此程式需要手動安裝，安裝完畢後再按下任意鍵。
-echo 此程式需要手動安裝，安裝完畢後再按下任意鍵。
-
-
-
-pause
-
-
-:: 清理下載的安裝程式
-if exist %downloadPath% (
-    del /f /q %downloadPath%
-    echo 安裝程式已刪除。
-)
-
-echo 完成。
