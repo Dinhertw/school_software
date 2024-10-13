@@ -1,12 +1,14 @@
 @echo off
-:: 檢查是否已具有管理員權限
-openfiles >nul 2>&1
-if not %errorlevel% equ 0 (
-    echo 正在以管理員身份重新啟動腳本...
-    :: 以管理員身份重新啟動此腳本
-    powershell -Command "Start-Process '%~f0' -Verb runAs"
-    exit /b
-)
+:CheckPrivileges
+NET SESSION >nul 2>&1
+if %errorLevel% == 0 ( goto :RunCommand ) else ( goto :RequestPrivileges )
+
+:RequestPrivileges
+echo Set UAC = CreateObject^("Shell.Application"^) > "%temp%\UAC.vbs"
+echo UAC.ShellExecute "cmd.exe", "/c %~s0", "", "runas", 1 >> "%temp%\UAC.vbs"
+"%temp%\UAC.vbs"
+del "%temp%\UAC.vbs"
+exit /B
 
 
 
