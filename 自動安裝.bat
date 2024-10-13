@@ -1,23 +1,13 @@
 @echo off
-:: BatchGotAdmin (Run as Admin code starts)
-REM --> Check for permissions
->nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
-REM --> If error flag set, we do not have admin.
-if '%errorlevel%' NEQ '0' (
-echo Requesting Administrative Privileges...
-goto UACPrompt
-) else ( goto gotAdmin )
-:UACPrompt
-echo Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
-echo UAC.ShellExecute "%~s0", "", "", "runas", 1 >> "%temp%\getadmin.vbs"
-"%temp%\getadmin.vbs"
-exit /B
-:gotAdmin
-if exist "%temp%\getadmin.vbs" ( del "%temp%\getadmin.vbs" )
-pushd "%CD%"
-CD /D "%~dp0"
-:: BatchGotAdmin (Run as Admin code ends)
-:: Your codes should start from the following line
+:: 檢查是否已具有管理員權限
+openfiles >nul 2>&1
+if not %errorlevel% equ 0 (
+    echo 正在以管理員身份重新啟動腳本...
+    :: 以管理員身份重新啟動此腳本
+    powershell -Command "Start-Process '%~f0' -Verb runAs"
+    exit /b
+)
+
 
 
 
