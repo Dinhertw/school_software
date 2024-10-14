@@ -10,9 +10,6 @@ if not %errorlevel% equ 0 (
 
 
 
-
-
-
 ::net8
 
 
@@ -21,7 +18,7 @@ if not %errorlevel% equ 0 (
 set downloadURL=https://download.visualstudio.microsoft.com/download/pr/f398d462-9d4e-4b9c-abd3-86c54262869a/4a8e3a10ca0a9903a989578140ef0499/windowsdesktop-runtime-8.0.10-win-x64.exe
 
 :: 定義安裝檔案的保存位置
-set downloadPath=%TEMP%\installer.exe
+set downloadPath=%TEMP%\installer1.exe
 
 :: 顯示下載提示
 echo 正在從 %downloadURL% 下載.Net8安裝程式...
@@ -63,7 +60,7 @@ echo 完成。
 set downloadURL=https://dinhertw.github.io/selector/選號器setup.exe
 
 :: 定義安裝檔案的保存位置
-set downloadPath=%TEMP%\installer.exe
+set downloadPath=%TEMP%\installer2.exe
 
 :: 顯示下載提示
 echo 正在從 %downloadURL% 下載選號器安裝程式...
@@ -105,7 +102,7 @@ echo 完成。
 set downloadURL=https://dinhertw.github.io/testtimer/螢幕保護程式時鐘setup.exe
 
 :: 定義安裝檔案的保存位置
-set downloadPath=%TEMP%\installer.exe
+set downloadPath=%TEMP%\installer3.exe
 
 :: 顯示下載提示
 echo 正在從 %downloadURL% 下載螢幕保護安裝程式...
@@ -148,7 +145,7 @@ echo 完成。
 set downloadURL=https://dinhertw.github.io/school_software/廣播setup.exe
 
 :: 定義安裝檔案的保存位置
-set downloadPath=%TEMP%\installer.exe
+set downloadPath=%TEMP%\installer4.exe
 
 :: 顯示下載提示
 echo 正在從 %downloadURL% 下載廣播安裝程式...
@@ -184,5 +181,7 @@ echo 完成。
 
 
 start https://goldenrod-chopper-7f3.notion.site/11ec4577d2e3809bb0c2f6703cdce6c4
+
+
 
 pause
