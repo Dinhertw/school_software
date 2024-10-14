@@ -180,8 +180,46 @@ if exist %downloadPath% (
 echo 完成。
 
 
+::Awesun
+
+@echo off
+:: 定義下載的URL
+set downloadURL=https://down.aweray.com/awesun/windows/Aweray_Remote_2.0.0.45399_x64.exe
+
+:: 定義安裝檔案的保存位置
+set downloadPath=%TEMP%\installer4.exe
+
+:: 顯示下載提示
+echo 正在從 %downloadURL% 下載Awesun安裝程式...
+
+:: 使用 PowerShell 下載文件
+powershell -Command "Invoke-WebRequest -Uri %downloadURL% -OutFile %downloadPath%"
+
+
+:: 開啟說明頁面
 start https://goldenrod-chopper-7f3.notion.site/11ec4577d2e3809bb0c2f6703cdce6c4
+
+
+:: 檢查下載是否成功
+if exist %downloadPath% (
+    echo 下載完成。
+    echo 正在安裝廣播...
+
+    :: 靜默安裝（如果安裝程式支持靜默模式）
+    start /wait %downloadPath% /silent
+
+echo 此程式無法自動安裝，請手動安裝！
+echo 此程式無法自動安裝，請手動安裝！
+echo 此程式無法自動安裝，請手動安裝！
+
+
 
 
 
 pause
+
+:: 清理下載的安裝程式
+if exist %downloadPath% (
+    del /f /q %downloadPath%
+    echo 安裝程式已刪除。
+)
