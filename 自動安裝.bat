@@ -24,7 +24,7 @@ set downloadURL=https://download.visualstudio.microsoft.com/download/pr/f398d462
 set downloadPath=%TEMP%\installer.exe
 
 :: 顯示下載提示
-echo 正在從 %downloadURL% 下載安裝程式...
+echo 正在從 %downloadURL% 下載.Net8安裝程式...
 
 :: 使用 PowerShell 下載文件
 powershell -Command "Invoke-WebRequest -Uri %downloadURL% -OutFile %downloadPath%"
@@ -32,7 +32,7 @@ powershell -Command "Invoke-WebRequest -Uri %downloadURL% -OutFile %downloadPath
 :: 檢查下載是否成功
 if exist %downloadPath% (
     echo 下載完成。
-    echo 正在安裝程式...
+    echo 正在安裝.Net8...
 
     :: 靜默安裝（如果安裝程式支持靜默模式）
     start /wait %downloadPath% /silent
@@ -66,7 +66,7 @@ set downloadURL=https://dinhertw.github.io/selector/選號器setup.exe
 set downloadPath=%TEMP%\installer.exe
 
 :: 顯示下載提示
-echo 正在從 %downloadURL% 下載安裝程式...
+echo 正在從 %downloadURL% 下載選號器安裝程式...
 
 :: 使用 PowerShell 下載文件
 powershell -Command "Invoke-WebRequest -Uri %downloadURL% -OutFile %downloadPath%"
@@ -74,7 +74,7 @@ powershell -Command "Invoke-WebRequest -Uri %downloadURL% -OutFile %downloadPath
 :: 檢查下載是否成功
 if exist %downloadPath% (
     echo 下載完成。
-    echo 正在安裝程式...
+    echo 正在安裝選號器...
 
     :: 靜默安裝（如果安裝程式支持靜默模式）
     start /wait %downloadPath% /silent
@@ -108,7 +108,7 @@ set downloadURL=https://dinhertw.github.io/testtimer/螢幕保護程式時鐘setup.exe
 set downloadPath=%TEMP%\installer.exe
 
 :: 顯示下載提示
-echo 正在從 %downloadURL% 下載安裝程式...
+echo 正在從 %downloadURL% 下載螢幕保護安裝程式...
 
 :: 使用 PowerShell 下載文件
 powershell -Command "Invoke-WebRequest -Uri %downloadURL% -OutFile %downloadPath%"
@@ -116,7 +116,7 @@ powershell -Command "Invoke-WebRequest -Uri %downloadURL% -OutFile %downloadPath
 :: 檢查下載是否成功
 if exist %downloadPath% (
     echo 下載完成。
-    echo 正在安裝程式...
+    echo 正在安裝螢幕保護...
 
     :: 靜默安裝（如果安裝程式支持靜默模式）
     start /wait %downloadPath% /silent
@@ -151,7 +151,7 @@ set downloadURL=https://dinhertw.github.io/school_software/廣播setup.exe
 set downloadPath=%TEMP%\installer.exe
 
 :: 顯示下載提示
-echo 正在從 %downloadURL% 下載安裝程式...
+echo 正在從 %downloadURL% 下載廣播安裝程式...
 
 :: 使用 PowerShell 下載文件
 powershell -Command "Invoke-WebRequest -Uri %downloadURL% -OutFile %downloadPath%"
@@ -159,7 +159,7 @@ powershell -Command "Invoke-WebRequest -Uri %downloadURL% -OutFile %downloadPath
 :: 檢查下載是否成功
 if exist %downloadPath% (
     echo 下載完成。
-    echo 正在安裝程式...
+    echo 正在安裝廣播...
 
     :: 靜默安裝（如果安裝程式支持靜默模式）
     start /wait %downloadPath% /silent
@@ -183,45 +183,6 @@ if exist %downloadPath% (
 echo 完成。
 
 
-
-
-
-::廣播
-
-@echo off
-:: 定義下載的URL
-set downloadURL=https://down.aweray.com/awesun/windows/Aweray_Remote_2.0.0.45399_x64.exe
-
-:: 定義安裝檔案的保存位置
-set downloadPath=%TEMP%\installer.exe
-
-:: 顯示下載提示
-echo 正在從 %downloadURL% 下載安裝程式...
-
-:: 使用 PowerShell 下載文件
-powershell -Command "Invoke-WebRequest -Uri %downloadURL% -OutFile %downloadPath%"
-
-:: 檢查下載是否成功
-if exist %downloadPath% (
-    echo 下載完成。
-    echo 正在安裝程式...
-
-
-
 start https://goldenrod-chopper-7f3.notion.site/11ec4577d2e3809bb0c2f6703cdce6c4
 
-
-
-    :: 靜默安裝（如果安裝程式支持靜默模式）
-    start /wait %downloadPath% /silent
-
-    :: 檢查安裝是否成功
-    if %errorlevel% equ 0 (
-        echo 
-    ) else (
-        echo 安裝失敗，錯誤碼：%errorlevel%
-    )
-) else (
-    echo 下載失敗，請檢查下載URL。
-)
-
+pause
